@@ -15,16 +15,16 @@ module AuthenticationConcern
     !current_user.nil?
   end
 
-  # def login_user(user)
-  #   session[:token] = FIX THIS
-  # end
+  def set_token
+    @user = User.find_by(email: params[:email])
+    @user.generate_token
+    session[:token] = @user.token
+  end
 
   def valid_login?
     @user = User.find_by(email: params[:email])
 
     if @user.password == params[:password]
-      @user.generate_token
-      session[:token] = @user.token
       return true
     else
       return false
@@ -33,6 +33,16 @@ module AuthenticationConcern
 
   def log_out
     session[:token].clear
+  end
+
+  def sign_up
+    user = User.new(
+      email: params([:email]),
+      first_name: params([:first_name]),
+      last_name: params([:last_name])
+     )
+    user.password = params[:password]
+    user.save!
   end
 
 end
