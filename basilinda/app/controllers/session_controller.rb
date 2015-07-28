@@ -1,0 +1,18 @@
+class SessionController < ApplicationController
+
+
+  def create
+    if valid_login?
+      redirect_to root_path
+    else
+      raise ArgumentError, "wrong password"
+    end
+  end
+
+
+  def destroy
+    log_out
+    redirect_to root_path
+  end
+
+end
