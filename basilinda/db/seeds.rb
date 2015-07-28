@@ -1,5 +1,4 @@
 #Initial Users
-admin = User.create(first_name: "Basilinda", last_name: "Randomizer", password: "hello", email: "questions@basilinda.com", token: "fauxtoken", admin_flag: "Y")
 User.create(first_name: "Bik", last_name: "Virk", password: "hello", email: "bikram.virk@gmail.com", token: "fauxtoken")
 User.create(first_name: "John", last_name: "Hess", password: "hello", email: "hessjohnt@gmail.com", token: "fauxtoken")
 User.create(first_name: "Sung", last_name: "Choi", password: "hello", email: "sbchoi86@gmail.com", token: "fauxtoken")
