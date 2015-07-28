@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_digest = @password
   end
+
+  def generate_token
+    self.update_attributes(token: SecureRandom.hex)
+  end
 end
