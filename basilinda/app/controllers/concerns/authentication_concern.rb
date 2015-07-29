@@ -37,9 +37,9 @@ module AuthenticationConcern
 
   def sign_up
     user = User.new(
-      email: params([:email]),
-      first_name: params([:first_name]),
-      last_name: params([:last_name])
+      email: params[:email],
+      first_name: params[:first_name],
+      last_name: params[:last_name]
      )
     user.password = params[:password]
     user.save!
