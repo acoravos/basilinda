@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
   get '/challenges/:id/reject', to: "challenges#reject", as: "reject"
+  get '/unlock/:id', to: "challenges#unlock", as: "unlock"
 
 
   root "homepage#show"
