@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   def create
     sign_up
     set_token
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def show
   end
+
 end
