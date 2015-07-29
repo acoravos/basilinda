@@ -25,7 +25,8 @@ class ChallengesController < ApplicationController
   def unlock
     challenge = UserRandomChallenge.find(params[:id])
     challenge.update_attributes(status: nil)
-    redirect_to dashboard_path
+    render 'users/show'
+    # redirect_to dashboard_path
   end
 
 end

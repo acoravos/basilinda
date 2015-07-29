@@ -95,7 +95,8 @@
         <td><%= RandomChallenge.find(challenge.random_challenge_id).dare %></td>
         <td><%= challenge.updated_at %></td>
         <td>
-          <a href="/unlock/<%= challenge.id %>">Unlock me</a></td>
+          <%= link_to "Unlock Me", "/unlock/#{challenge.id}", remote: true %>
+          </td>
         </td>
       </tr>
     <% end %>
