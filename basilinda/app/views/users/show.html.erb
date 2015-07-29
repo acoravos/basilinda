@@ -1,0 +1,34 @@
+<h1>Dashboard</h1>
+
+<% if logged_in?%>
+  <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %></p>
+  <%= link_to 'Log Out', logout_path %>
+<% end %>
+
+<h1> TRUTH OR DARE? </h1>
+<%= button_to "Unlock a challenge", generate_path %>
+
+<% if @unlocked_challenges %>
+  <h2 >Your Unlocked Challenges</h2>
+  <table >
+    <thead>
+        <tr>
+            <th>Truth</th>
+            <th>Dare</th>
+            <th>What will you decide?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <% @unlocked_challenges.each do |challenge| %>
+        <tr>
+          <td><%= challenge.random_challenge.truth %></td>
+          <td><%= challenge.random_challenge.dare %></td>
+          <td><a href="#">Accept</a>
+          <a href="#">Reject</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

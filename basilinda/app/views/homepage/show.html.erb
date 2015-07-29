@@ -1,0 +1,13 @@
+<h1> Welcome to Basilinda! </h1>
+
+
+<% if logged_in?%>
+  <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %></p>
+  <%= link_to 'Log Out', logout_path %>
+<% else %>
+  <%= link_to 'Log In', login_path %>
+  <%= link_to 'Sign Up', signup_path %>
+<% end %>
+
+
+
