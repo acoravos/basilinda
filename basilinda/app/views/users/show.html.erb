@@ -24,11 +24,55 @@
         <tr>
           <td><%= challenge.random_challenge.truth %></td>
           <td><%= challenge.random_challenge.dare %></td>
-          <td><a href="#">Accept</a>
-          <a href="#">Reject</a></td>
+          <td><a href="/challenges/<%= challenge.id %>/accept">Accept</a>
+          <a href="/challenges/<%= challenge.id %>/accept">Reject</a></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% end %>
+
+  <h2 class="content-head is-center">Your Completed Truths</h2>
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Truth</th>
+            <th>Answer</th>
+            <th>Date completed</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <% @complete_truths.each do |challenge| %>
+        <tr>
+          <td><%= RandomChallenge.find(challenge.random_challenge_id).truth %></td>
+          <td><%= challenge.answer %></td>
+          <td><%= challenge.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+    <h2 class="content-head is-center">Your Completed Dares</h2>
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Dare</th>
+            <th>Answer</th>
+            <th>Date completed</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <% @complete_dares.each do |challenge| %>
+        <tr>
+          <td><%= RandomChallenge.find(challenge.random_challenge_id).dare %></td>
+          <td><%= challenge.answer %></td>
+          <td><%= challenge.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 

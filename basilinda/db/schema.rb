@@ -28,8 +28,7 @@ ActiveRecord::Schema.define(version: 20150728183438) do
     t.integer  "random_challenge_id"
     t.string   "status"
     t.string   "truthordare"
-    t.string   "truth_answer"
-    t.string   "dare_upload"
+    t.string   "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
