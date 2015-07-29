@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # @unlocked_challenges = UserRandomChallenge.where(user_id: current_user.id)
   end
 
 end
