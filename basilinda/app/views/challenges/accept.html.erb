@@ -1,0 +1,21 @@
+<h1>Which will you pick?</h1>
+
+
+<%= form_for @challenge, url: {action: "update"}, html: {class: "truth-or-dare-form"} do |f| %>
+<%= dare_question %>
+<%= f.text_area :answer %>
+<%= f.submit "I'll do the dare" %>
+<%= hidden_field_tag(:status, "accepted") %>
+<%= hidden_field_tag(:truthordare, "dare") %>
+<%= hidden_field_tag(:id, @challenge.id) %>
+<% end %>
+
+<%= form_for @challenge, url: {action: "update"}, html: {class: "truth-or-dare-form"} do |f| %>
+<%= truth_question %>
+<%= f.text_area :answer %>
+<%= f.submit "I'll answer the truth" %>
+<%= hidden_field_tag(:status, "accepted") %>
+<%= hidden_field_tag(:truthordare, "truth") %>
+<%= hidden_field_tag(:id, @challenge.id) %>
+<% end %>
+

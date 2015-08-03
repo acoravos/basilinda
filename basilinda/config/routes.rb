@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
   post '/generate', to: "challenges#create"
 
+  get '/challenges/:id/accept', to: "challenges#accept", as: "accept"
+  patch '/challenges/:id', to: "challenges#update", as: "update"
+
+
+  get '/challenges/:id/reject', to: "challenges#reject", as: "reject"
+  get '/unlock/:id', to: "challenges#unlock", as: "unlock"
+
 
   root "homepage#show"
 
